@@ -1,12 +1,12 @@
 {
-  "id": "io.github.cosmic_utils.cosmic-ext-applet-external-monitor-brightness",
+  "id": "io.github.4rc0s.cosmic-ext-applet-dark-toggle",
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "24.08",
   "base": "com.system76.Cosmic.BaseApp",
   "base-version": "stable",
   "sdk": "org.freedesktop.Sdk",
   "sdk-extensions": ["org.freedesktop.Sdk.Extension.rust-stable"],
-  "command": "cosmic-ext-applet-external-monitor-brightness",
+  "command": "cosmic-ext-applet-dark-toggle",
   "finish-args": [
     "--share=ipc",
     "--socket=wayland",
@@ -18,12 +18,12 @@
   "build-options": {
     "append-path": "/usr/lib/sdk/rust-stable/bin",
     "env": {
-      "CARGO_HOME": "/run/build/cosmic-ext-applet-external-monitor-brightness/cargo"
+      "CARGO_HOME": "/run/build/cosmic-ext-applet-dark-toggle/cargo"
     }
   },
   "modules": [
     {
-      "name": "cosmic-ext-applet-external-monitor-brightness",
+      "name": "cosmic-ext-applet-dark-toggle",
       "buildsystem": "simple",
       "build-commands": [
         "just build-release --verbose --offline",
@@ -32,7 +32,7 @@
       "sources": [
         {
           "type": "git",
-          "url": "https://github.com/cosmic-utils/cosmic-ext-applet-external-monitor-brightness.git",
+          "url": "https://github.com/4rc0s/cosmic-ext-applet-dark-toggle.git",
           "commit": "###commit###"
         },
         "cargo-sources.json"
