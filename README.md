@@ -1,14 +1,39 @@
-# External Monitor Brightness Applet for the COSMIC™ desktop
+# Dark Mode Toggle Applet for the COSMIC™ desktop
 
-Change brightness of external monitors via DDC/CI protocol. You can also quickly toggle system dark mode.
+Toggle system light/dark mode from the panel.
 
-![Screenshot](res/screenshot1.png)
+## Installation
 
-## Troubleshooting
+### Build and install
 
-Maybe you need to setup the necessary udev rules if ddcutil is old.
-For this to work you need write access to `/dev/i2c-*`.
-See [https://www.ddcutil.com/i2c_permissions/](https://www.ddcutil.com/i2c_permissions/).
+```sh
+just build-release
+sudo just install
+```
+
+### Add to the panel
+
+After installing, the applet must be added to the panel manually:
+
+1. Right-click the panel → **Panel Settings**
+2. Go to **Applets**
+3. Find **Dark Toggle** and add it to the panel
+
+Log out and back in if the applet does not appear after adding it.
+
+## Building from source
+
+```sh
+just build-debug    # debug build
+just build-release  # release build
+just install        # install to /usr/share and /usr/bin
+```
+
+Run with logging:
+
+```sh
+RUST_LOG="warn,cosmic_ext_applet_dark_toggle=debug" ./target/debug/cosmic-ext-applet-dark-toggle
+```
 
 ## Credits
 
